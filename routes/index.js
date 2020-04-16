@@ -6,7 +6,7 @@ const {loadData, saveData} = require('../utils/data')
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-
+// hung
 router.get("/browse", (req, res) => {
   const data = loadData()
   res.render("allImages", {images: data})
