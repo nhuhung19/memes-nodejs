@@ -1,39 +1,48 @@
-{{#if images}}
+<div class="row container mx-auto mt-4" >
+    {{#if images}}
 
-{{#each images}}
-<!-- Button trigger modal -->
-{{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    {{#each images}}
+    <!-- Button trigger modal -->
+    {{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Launch demo modal
 </button> --}}
 
-<!-- Modal -->
-<div class="modal fade" id="myModal-{{{id}}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Add text for image</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <img class="w-100 h-100" src="/uploads/{{{filename}}}" alt="{{{filename}}}" />
-                {{!-- {{{filename}}} --}}
-            </div>
-            <div class="modal-footer">
-                <form action="/memes" method="post">
-                    <div><input type="text" name="texttopMeme" placeholder="text to top"/></div>
-                    <div><input type="text" name="textbotMeme" placeholder="text to bottom" /></div>
-                    <div><input type="hidden" name="id" value="{{{id}}}"></div>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </form>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal-{{{id}}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content w-75 h-75">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Add text for image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body w-100">
+                    <img class="w-100" src="/uploads/{{{filename}}}" alt="{{{filename}}}" />
+                </div>
+                <div class="modal-footer">
+                    <form action="/memes" method="post" class="w-100">
+                        <div class="text-center mb-2 rounded"><input class="w-75 p-2" type="text" name="texttopMeme"
+                                placeholder="text to top" /></div>
+                        <div class="text-center my-2 rounded"><input class="w-75 p-2" type="text" name="textbotMeme"
+                                placeholder="text to bottom" /></div>
+                        <div><input class="w-75" type="hidden" name="id" value="{{{id}}}"></div>
+                        <div class="w-100 d-flex justify-content-end mt-2">
+                            <button type="submit" class="btn btn-primary mx-3">Save</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<img src="/uploads/{{{filename}}}" alt="{{{filename}}}" data-toggle="modal" data-target="#myModal-{{{id}}}" />
-{{/each }}
 
-{{/if}}
+    <div class="col-lg-3 mt-3">
+        <img class="w-100 h-100 rounded shadow" style="cursor: pointer;" src="/uploads/{{{filename}}}" alt="{{{filename}}}"
+            data-toggle="modal" data-target="#myModal-{{{id}}}" />
+    </div>
+    {{/each }}
+
+    {{/if}}
+</div>

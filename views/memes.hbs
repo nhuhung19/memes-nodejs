@@ -1,7 +1,9 @@
-this is memes
-
+<div class="row container mx-auto">
 {{#if images}}
-    {{#each images}}
-        <img src="/memes/{{{filename}}}" alt="{{{filename}}}" >
-    {{/each}}
+{{#each images}}
+<div class="col-lg-3 mt-5 w-100" >
+    <img class="w-100 shadow rounded" src="/memes/{{{filename}}}" alt="{{{filename}}}">
+</div>
+{{/each}}
 {{/if}}
+</div>

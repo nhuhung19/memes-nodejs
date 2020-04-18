@@ -1,11 +1,20 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="index mt-5">
+  <h1 class="text-center text-light display-4">Welcome to Meme</h1>
+  {{#if error}}
+  <h1 class="text-center text-warning">{{error}}</h1>
+  {{/if}}
 
-{{#if error}}
-<h1>{{error}}</h1>
-{{/if}}
+  {{#if errorText}}
+  <h1 class="text-center text-warning">{{errorText}}</h1>
+  {{/if}}
 
-<form action="/upload" method="post" enctype="multipart/form-data" >
-  <input type="file" name="fileUpload" accept="image/gif, image/jpeg, image/png, image/jpg" />
-  <button type="submit">Upload</button>
-</form>
+  <div class="d-flex justify-content-center w-100 h-100">
+
+
+
+    <form class="mt-5 text-light" action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="fileUpload" accept="image/gif, image/jpeg, image/png, image/jpg" />
+      <button class="btn btn-primary rounded-pill" type="submit">Upload</button>
+    </form>
+  </div>
+</div>
