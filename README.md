@@ -1,3 +1,3 @@
 # memes-nodejs
 
-<a src="https://new-memes.herokuapp.com/">Live Demo</a>
+<a src="https://new-memes.herokuapp.com/">https://new-memes.herokuapp.com/</a>
